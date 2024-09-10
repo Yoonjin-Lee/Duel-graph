@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "DuelGraph"
 include(":app")
- 
+include(":DuelGraph")
