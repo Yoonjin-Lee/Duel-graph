@@ -23,7 +23,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.duelgraph.data.DataSet
 import com.example.duelgraph.ui.theme.DuelGraphTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,8 +31,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DuelGraphTheme {
-                val list = ArrayList<DataSet>()
-                list.add(DataSet("1", "2"))
+                val list = ArrayList<com.example.duelgraph.data.DataSet>()
+                list.add(com.example.duelgraph.data.DataSet("1", "2"))
                 DualGraph(list)
             }
         }
@@ -41,7 +40,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun DualGraph(list: ArrayList<DataSet>) {
+fun DualGraph(list: ArrayList<com.example.duelgraph.data.DataSet>) {
     Scaffold(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -49,7 +48,7 @@ fun DualGraph(list: ArrayList<DataSet>) {
             modifier = Modifier.padding(it)
                 .fillMaxSize()
         ) {
-            com.example.duelgraph.LineGraph(
+            LineGraph(
                 list,
                 modifier = Modifier.weight(0.8f)
                     .fillMaxHeight()
@@ -65,7 +64,7 @@ fun DualGraph(list: ArrayList<DataSet>) {
 
 @Composable
 fun ScrollGraph(
-    list : ArrayList<DataSet>,
+    list : ArrayList<com.example.duelgraph.data.DataSet>,
     modifier: Modifier
 ){
     Box(
@@ -80,7 +79,7 @@ fun ScrollGraph(
 }
 
 @Composable
-fun ScrollCard(data : DataSet){
+fun ScrollCard(data : com.example.duelgraph.data.DataSet){
     Box(
         modifier = Modifier.fillMaxSize().clickable {
 
@@ -117,11 +116,11 @@ fun ScrollCard(data : DataSet){
 @Composable
 fun GreetingPreview() {
     DuelGraphTheme {
-        val list = ArrayList<DataSet>()
-        list.add(DataSet("1", "2"))
-        list.add(DataSet("1", "2"))
-        list.add(DataSet("1", "2"))
-        list.add(DataSet("1", "2"))
+        val list = ArrayList<com.example.duelgraph.data.DataSet>()
+        list.add(com.example.duelgraph.data.DataSet("1", "2"))
+        list.add(com.example.duelgraph.data.DataSet("1", "2"))
+        list.add(com.example.duelgraph.data.DataSet("1", "2"))
+        list.add(com.example.duelgraph.data.DataSet("1", "2"))
         DualGraph(list)
     }
 }
