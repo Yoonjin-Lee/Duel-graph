@@ -10,6 +10,7 @@ class ViewModel : ViewModel() {
     private val _state = MutableSharedFlow<Int>()
     val state = _state.asSharedFlow()
 
+    // ScrollGraph와 LineGraph가 서로 인덱스를 주고 받는 함수
     fun updateState(
         int: Int
     ) {
