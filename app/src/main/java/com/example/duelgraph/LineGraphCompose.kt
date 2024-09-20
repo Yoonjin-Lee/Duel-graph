@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.duelgraph.data.DataSet
 import kotlinx.coroutines.flow.collectLatest
+import kotlin.math.absoluteValue
 
 @Composable
 fun LineGraphCompose(
@@ -48,7 +49,7 @@ fun LineGraphCompose(
                     val width = size.width
                     val height = size.height
                     term = (width / num).toInt()
-                    val highest = list.maxOf { it.y.toInt() } + 1
+                    val highest = list.maxOf { it.y.toInt().absoluteValue } + 1
 
                     // y = 0 직선 그리기
                     drawLine(
